@@ -1,0 +1,13 @@
+
+Url
+response.xpath('//*[starts-with(@class, "m-offerBox_item")]')[0].xpath('div[@itemtype="http://schema.org/Product"]').xpath('meta[@itemprop="url"]/@content').extract_first()
+
+Details:
+
+Name = response.xpath('//*[@id="js-product-view"]/div[1]/div/h1/text()')
+price = response.xpath('//*[@class="b-offer_desc"]//div[@itemprop="price"]/text()').extract_first()
+colors = response.xpath('//*[@class="m-offerColors_container clearfix2 js-colorsBox"]/a[@class="m-offerColors_item color_name_pl "]/@title').extract_first()
+unavailable_sizes = response.xpath('//*[@class="m-offerSizes_item  disabled"]/a[@class="js-sizeItem"]/text()').extract_first()
+available_sizes = response.xpath('//*[@class="m-offerSizes_item  "]/a[@class="js-sizeItem"]/text()').extract_first()
+attributes = response.xpath('//dl[@class="m-offerShowData_row clearfix2"]/p/text()').extract_first()
+images = response.xpath('//*[@class="m-offerGallery_picture"]/@src')
