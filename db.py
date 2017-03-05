@@ -21,5 +21,5 @@ def fill_database():
 
 if not is_database_created:
     db.create_all()
-    fill_database()
+    #fill_database()
     db.session.commit()
