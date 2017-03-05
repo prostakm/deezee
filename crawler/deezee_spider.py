@@ -97,7 +97,7 @@ class DeeZeeSpider(Spider):
 
     def parse(self, response):
         categoriesSelector = response.xpath(self._categoryItemsXPath)
-        for category_item in [categoriesSelector[0], categoriesSelector[1], categoriesSelector[3]]:
+        for category_item in categoriesSelector:
             category_name = category_item.select('./a/text()').extract_first()
             normalized_name = ' '.join(category_name.split())
             self.categories.append(normalized_name)
